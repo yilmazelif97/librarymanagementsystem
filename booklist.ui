@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>listofbook</class>
+ <widget class="QWidget" name="listofbook">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>441</width>
+    <height>421</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Book List</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background-image: url(:/newPrefix/yp.jpg);
+}
+</string>
+  </property>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>60</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit{
+
+background:white;
+}</string>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>100</y>
+     <width>371</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListView{
+
+background:white;
+}
+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>47</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    border: none;
+    color: white;
+    background: #E9967A	;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid #E9967A	;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+}
+ 
+QPushButton:hover {
+    color: #E9967A	;
+    background: #fff;
+    border: 2px solid #E9967A	;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>340</y>
+     <width>191</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    border: none;
+    color: white;
+    background: #E9967A	;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid #E9967A	;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+}
+ 
+QPushButton:hover {
+    color: #E9967A	;
+    background: #fff;
+    border: 2px solid #E9967A	;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Turn Back Main Page</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="ic.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/libraryms.iml" filepath="$PROJECT_DIR$/.idea/libraryms.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/voting-system-master/.idea/voting-system-master.iml" filepath="$USER_HOME$/Desktop/voting-system-master/.idea/voting-system-master.iml" />
+    </modules>
+  </component>
+</project>
