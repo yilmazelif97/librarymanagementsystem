@@ -1,7 +1,7 @@
 import sqlite3
 
 from bookeditpage import Ui_bookedit
-from mainlogin import Ui_mainform
+#from mainlogin import Ui_mainform
 from usereditpage import Ui_useredit
 from ıssuereturnpage import Ui_issuereturn
 
@@ -47,7 +47,7 @@ class Ui_adminmain(object):
         adminmain.resize(527, 535)
         adminmain.setStyleSheet("\n"
 "\n"
-"background-image: url(:/newPrefix/ds.jpg);")
+"background-image: url(ds.jpg);")
         self.pushButton = QtWidgets.QPushButton(adminmain)
         self.pushButton.setGeometry(QtCore.QRect(190, 410, 151, 71))
         self.pushButton.setStyleSheet("QPushButton {\n"

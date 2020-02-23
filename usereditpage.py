@@ -30,8 +30,8 @@ class Ui_useredit(object):
             conn = sqlite3.connect('library.db')
             cur = conn.cursor()
             cur.execute("DELETE FROM user WHERE USERID=? ", (self.textEdit.toPlainText() ))
-            result = QMessageBox.warning(useredit, 'Message', 'Deleted User!')
-            useredit.show()
+            #result = QMessageBox.warning(useredit, 'Message', 'Deleted User!')
+            #useredit.show()
             conn.commit()
             conn.close()
 
@@ -42,9 +42,9 @@ class Ui_useredit(object):
             ''' UPDATE  user SET USERNAME=?, USERSURNAME=?, PHONENUMBER=?, USERLOGINNAME=?, PASSWORD=? WHERE USERID = ? ''',
             ( self.textEdit_2.toPlainText() ,self.textEdit_3.toPlainText(), self.textEdit_4.toPlainText(),
               self.textEdit_5.toPlainText(), self.textEdit_6.toPlainText(),self.textEdit.toPlainText()))
-        result = QMessageBox.warning(useredit, 'Message', 'Updated User!')
+        #result = QMessageBox.warning(useredit, 'Message', 'Updated User!')
         conn.commit()
-        useredit.show()
+        #useredit.show()
         conn.close()
 
     def searchuser(self):
@@ -82,31 +82,28 @@ class Ui_useredit(object):
 
     def adduser(self):
 
-            userıd = self.textEdit.toPlainText()
+            userid = self.textEdit.toPlainText()
             username = self.textEdit_2.toPlainText()
             usersurname = self.textEdit_3.toPlainText()
             phonenumber = self.textEdit_4.toPlainText()
             userloginname = self.textEdit_5.toPlainText()
             password = self.textEdit_6.toPlainText()
+
             conn = sqlite3.connect('library.db')
             conn.execute(
-                ''' INSERT INTO user (USERID,USERNAME, USERSURNAME, PHONENUMBER, USERLOGINNAME, PASSWORD) VALUES (?,?,?,?,?,?) ''',
-                (userıd, username, usersurname, phonenumber, userloginname, password))
-            result = QMessageBox.warning(useredit, 'Message','Added User!')
-            useredit.show()
+                ''' INSERT INTO user (USERID,USERNAME, USERSURNAME, PHONENUMBER, USERLOGINNAME, PASSWORD ) VALUES (?,?,?,?,?,?) ''',
+                (userid, username, usersurname, phonenumber, userloginname, password))
+            #result = QMessageBox.warning(useredit, 'Message','Added User!')
+            #useredit.show()
 
 
             conn.commit()
 
 
-
-
-
-
     def setupUi(self, useredit):
         useredit.setObjectName("useredit")
         useredit.resize(802, 586)
-        useredit.setStyleSheet("background-image: url(:/newPrefix/ds.jpg);")
+        useredit.setStyleSheet("background-image: url(ds.jpg);")
         self.label = QtWidgets.QLabel(useredit)
         self.label.setGeometry(QtCore.QRect(89, 60, 71, 20))
         self.label.setStyleSheet("QLabel{\n"
@@ -412,7 +409,7 @@ class Ui_useredit(object):
 
     def ticklanmisSatir(self):
         print("Table clicked")
-        self.tableWidget.
+
 
 #import lili_rc
 

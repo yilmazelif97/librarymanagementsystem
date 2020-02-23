@@ -1,6 +1,6 @@
 import sqlite3
 
-from usermainpage import Ui_usermain
+#from mainlogin import Ui_mainform
 
 conn = sqlite3.connect('library.db')
 
@@ -29,16 +29,16 @@ class Ui_registerpage(object):
 
 
     def mainopen(self):
-        self.usermain = QtWidgets.QMainWindow()
-        self.ui = Ui_usermain()
-        self.ui.setupUi(self.usermain)
-        self.usermain.show()
+        self.mainlogin = QtWidgets.QMainWindow()
+        self.ui = Ui_mainform()
+        self.ui.setupUi(self.mainlogin)
+        self.mainlogin.show()
 
     def setupUi(self, registerpage):
         registerpage.setObjectName("registerpage")
         registerpage.resize(605, 576)
         registerpage.setStyleSheet("QWidget{\n"
-"    background-image: url(:/newPrefix/yp.jpg);\n"
+"    background-image: url(yp.jpg);\n"
 "\n"
 "}")
         self.label = QtWidgets.QLabel(registerpage)
@@ -152,7 +152,6 @@ class Ui_registerpage(object):
 "}\n"
 "")
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.mainopen)
         self.pushButton.clicked.connect(self.data_entry)
 
         self.label_6 = QtWidgets.QLabel(registerpage)
@@ -165,6 +164,7 @@ class Ui_registerpage(object):
         self.label_6.setFont(font)
         self.label_6.setObjectName("label_6")
         self.pushButton_2 = QtWidgets.QPushButton(registerpage)
+        self.pushButton_2.clicked.connect(self.mainopen)
         self.pushButton_2.setGeometry(QtCore.QRect(100, 470, 191, 51))
         self.pushButton_2.setStyleSheet("QPushButton {\n"
 "    border: none;\n"

@@ -5,6 +5,8 @@ dbase = sqlite3.connect('library.db')
 from usermainpage import Ui_usermain
 from registerpage import Ui_registerpage
 
+import DataAccess
+
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -12,32 +14,36 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_userlogin(object):
 
+
+
+
+    def usercatch(self,userID,userName):  #sayfayı o userıd ile açmamı sağlıyor
+        self.usermain = QtWidgets.QMainWindow()
+        self.ui = Ui_usermain(userID,userName)
+        self.ui.setupUi(self.usermain)
+        self.usermain.show()
+
+
     def openregister(self):
 
         self.registerpage = QtWidgets.QMainWindow()
+
         self.ui = Ui_registerpage()
         self.ui.setupUi(self.registerpage)
         self.registerpage.show()
         self.Form.close()
 
+
     def logincheck(self):
         userloginname = self.textEdit.toPlainText()
         password = self.textEdit_2.toPlainText()
 
-        connection = sqlite3.connect('library.db')
+        result = DataAccess.getLogin(userloginname, password)
 
-        result = connection.execute(''' SELECT * FROM user WHERE userloginname = ? AND password = ? ''',
-                                    (userloginname, password))
-        if (len(result.fetchall()) > 0):
-            print("user found")
-            self.usermain = QtWidgets.QMainWindow()
-            self.ui = Ui_usermain()
-            self.ui.setupUi(self.usermain)
-            self.usermain.show()
+        if result:
+            self.usercatch(result['USERID'],result['USERNAME'])
+            userlogin.close()
 
-
-        else:
-            print("user not found")
 
     def signupcheck(self):
         print("signupcheck button clicked")
@@ -52,7 +58,7 @@ class Ui_userlogin(object):
         userlogin.setStyleSheet("QWidget{\n"
 "\n"
 "\n"
-"    background-image: url(:/newPrefix/yp.jpg);\n"
+"    background-image: url(yp.jpg);\n"
 "}")
         self.label = QtWidgets.QLabel(userlogin)
         self.label.setGeometry(QtCore.QRect(30, 110, 111, 20))

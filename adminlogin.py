@@ -36,7 +36,7 @@ class Ui_adminlogin(object):
         adminlogin.setObjectName("adminlogin")
         adminlogin.resize(498, 378)
         adminlogin.setStyleSheet("QWidget{\n"
-"    background-image: url(:/newPrefix/ds.jpg);\n"
+"    background-image: url(ds.jpg);\n"
 "\n"
 "\n"
 "}")
